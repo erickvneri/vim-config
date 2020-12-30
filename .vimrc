@@ -21,7 +21,7 @@ filetype off
 """""""""""""""""""""""""""""""""""
 
 """"""""""" Vim-Plug plugin manager
-call plug#begin('~/vim-environment/.vim/plugged')
+call plug#begin('~/vim-config/.vim/plugged')
 	" fs tree
 	Plug 'preservim/nerdtree'
 	" line commenter
@@ -90,7 +90,7 @@ au BufRead *.c,*.h
 colorscheme codedark
 
 " coc config
-source ~/vim-environment/.vim/preferences/coc.vim
+source ~/vim-config/.vim/preferences/coc.vim
 
 " airline theme
 let g:airline_theme='base16_ashes'
@@ -123,7 +123,7 @@ let g:mkdp_filetypes = ['markdown']
 let mapleader=' '
 
 " source .vimrc
-nnoremap <Leader>rf :source ~/vim-environment/.vimrc<CR>
+nnoremap <Leader>rf :source ~/vim-config/.vimrc<CR>
 
 " nerdtree config
 nnoremap <C-B> :NERDTreeFind<CR>
