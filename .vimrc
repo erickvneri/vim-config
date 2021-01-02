@@ -96,8 +96,6 @@ source ~/vim-config/.vim/preferences/coc.vim
 let g:airline_theme='base16_ashes'
 let g:airline#extensions#hunk#non_zero_only=1
 
-" nerdtree mobile config
-"let g:NERDTreeWinSize=18
 " nerdtree desktop config
 let g:NERDTreeWinSize=35
 
