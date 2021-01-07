@@ -88,6 +88,8 @@ au BufRead *.c,*.h
 """""""""Plugin configs
 " colorschemes
 colorscheme codedark
+""""""Transparent background
+""hi Normal guibg=NONE ctermbg=NONE
 
 " coc config
 source ~/vim-config/.vim/preferences/coc.vim
@@ -157,32 +159,10 @@ nnoremap <Leader>t :ter<CR>i
 """open terminal - split vertical (default)
 nnoremap <Leader>tv <C-W>v:ter<CR>i
 """open terminal - split below
-nnoremap <Leader>tt <C-W>s:ter<CR>i
+nnoremap <Leader>tt <C-W>s:ter<CR>:resize 20<CR>i
 ""terminal normal mode
 tnoremap <ESC> <C-\><C-n>
 """"""""""""""""""""""""
-
-"""""""""""""""Functions
-" JSON Formatter
-function! FormatJSON()
-python3 << EOF
-import vim
-import json
-try:
-    buffer = vim.current.buffer
-    content = '\n'.join(buffer[:])
-    read_json = json.loads(content)
-    to_json = json.dumps(
-        read_json,
-	indent=4,
-	sort_keys=False)
-    buffer[:] = to_json.split('\n')
-except Exception as e:
-    print('json format error %s' % e)
-EOF
-endfunction
-" FormatJSON mapping
-nnoremap <Leader>jf :call FormatJSON()<CR>
 
 " extra whitespace highlight
 highlight ExtraWhitespace ctermbg=red guibg=red
