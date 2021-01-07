@@ -54,7 +54,7 @@ call plug#end()
 """""""""""""""""""""""""""
 
 """"""""""""""Buffer config
-" python indentation config
+" Python indentation config
 au BufNewFile,BufRead *.py
 	\ set tabstop=4
 	\ softtabstop=4
@@ -63,7 +63,7 @@ au BufNewFile,BufRead *.py
 	\ autoindent
 	\ fileformat=unix
 
-" fullstack indentation config
+" Indentation config
 au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.yaml,*.md
 	\ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au BufRead *.html
@@ -75,8 +75,6 @@ au BufRead *.json
 	\ shiftwidth=4
 	\ autoindent
 	\ expandtab
-
-" c programming
 au BufRead *.c,*.h
 	\ set tabstop=4
 	\ softtabstop=4
@@ -86,34 +84,48 @@ au BufRead *.c,*.h
 """""""""""""""""""""""
 
 """""""""Plugin configs
-" colorschemes
+" Colorscheme customizations
 colorscheme codedark
-""""""Transparent background
-""hi Normal guibg=NONE ctermbg=NONE
+" Transparent background
+highlight Normal guibg=NONE ctermbg=NONE
+highlight NonText guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+" Extra whitespace highlight
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
-" coc config
+" Coc config
 source ~/vim-config/.vim/preferences/coc.vim
 
-" airline theme
+" Airline theme
 let g:airline_theme='base16_ashes'
 let g:airline#extensions#hunk#non_zero_only=1
 
-" nerdtree desktop config
+" Nerdtree config
+nnoremap <C-B> :NERDTreeToggle<CR>
+" Desktop size
 let g:NERDTreeWinSize=35
+" Mobile size
+"let g:NERDTreeWinSize=18
 
-" gitgutter config
+" Gitgutter config
 highlight GitGutterAdd guifg=#009900 ctermfg=Green
 highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
 highlight GitGutterDeletw guifg=#ff2222 ctermfg=Red
 let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 
-" emmet config
+" Emmet config
 let g:user_emmet_leader_key = ','
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,js EmmetInstall
 
-" markdown preview
+" Markdown preview
 let g:mkdp_page_title = '${name} - Preview'
 let g:mkdp_filetypes = ['markdown']
 """"""""""""""""""""""""
@@ -125,8 +137,6 @@ let mapleader=' '
 " source .vimrc
 nnoremap <Leader>rf :source ~/vim-config/.vimrc<CR>
 
-" nerdtree config
-nnoremap <C-B> :NERDTreeFind<CR>
 
 " markdown preview
 nnoremap <Leader>mp :MarkdownPreview<CR>
@@ -163,12 +173,4 @@ nnoremap <Leader>tt <C-W>s:ter<CR>:resize 20<CR>i
 ""terminal normal mode
 tnoremap <ESC> <C-\><C-n>
 """"""""""""""""""""""""
-
-" extra whitespace highlight
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
 
