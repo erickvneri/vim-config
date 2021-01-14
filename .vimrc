@@ -169,8 +169,17 @@ nnoremap <Leader>t :ter<CR>i
 """open terminal - split vertical (default)
 nnoremap <Leader>tv <C-W>v:ter<CR>i
 """open terminal - split below
-nnoremap <Leader>tt <C-W>s:ter<CR>:resize 20<CR>i
+nnoremap <Leader>tt <C-W>s:ter<CR>:resize 16<CR>i
 ""terminal normal mode
 tnoremap <ESC> <C-\><C-n>
+" resize window (planned to be used with terminal)
+function HideWindow()
+	:resize 0
+endfunction
+function ShowWindow()
+	:resize 16
+endfunction
+nnoremap <silent><M-h> :call HideWindow()<CR>
+nnoremap <silent><M-j> :call ShowWindow()<CR>
 """"""""""""""""""""""""
 
