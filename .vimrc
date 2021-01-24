@@ -109,7 +109,7 @@ let g:airline#extensions#hunk#non_zero_only=1
 " Nerdtree config
 nnoremap <C-B> :NERDTreeToggle<CR>
 " Desktop size
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=40
 " Mobile size
 "let g:NERDTreeWinSize=18
 
