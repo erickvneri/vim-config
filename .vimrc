@@ -109,7 +109,7 @@ let g:airline#extensions#hunk#non_zero_only=1
 " Nerdtree config
 nnoremap <C-B> :NERDTreeToggle<CR>
 " Desktop size
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=32
 " Mobile size
 "let g:NERDTreeWinSize=18
 
@@ -169,7 +169,7 @@ nnoremap <Leader>t :ter<CR>i
 """open terminal - split vertical (default)
 nnoremap <Leader>tv <C-W>v:ter<CR>i
 """open terminal - split below
-nnoremap <Leader>tt <C-W>s:ter<CR>:resize 16<CR>i
+nnoremap <Leader>tt <C-W>s:ter<CR>:resize 14<CR>i
 ""terminal normal mode
 tnoremap <ESC> <C-\><C-n>
 " resize window (planned to be used with terminal)
@@ -177,7 +177,7 @@ function HideWindow()
 	:resize 0
 endfunction
 function ShowWindow()
-	:resize 16
+	:resize 14
 endfunction
 nnoremap <silent><M-h> :call HideWindow()<CR>
 nnoremap <silent><M-j> :call ShowWindow()<CR>
