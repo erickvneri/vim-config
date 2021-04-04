@@ -172,14 +172,4 @@ nnoremap <Leader>tv <C-W>v:ter<CR>i
 nnoremap <Leader>tt <C-W>s:ter<CR>:resize 14<CR>i
 ""terminal normal mode
 tnoremap <ESC> <C-\><C-n>
-" resize window (planned to be used with terminal)
-function HideWindow()
-	:resize 0
-endfunction
-function ShowWindow()
-	:resize 14
-endfunction
-nnoremap <silent><M-h> :call HideWindow()<CR>
-nnoremap <silent><M-j> :call ShowWindow()<CR>
-""""""""""""""""""""""""
 
