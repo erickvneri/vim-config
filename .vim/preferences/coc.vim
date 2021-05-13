@@ -143,6 +143,7 @@ let g:coc_global_extensions = [
 \	'coc-html',
 \	'coc-python',
 \	'coc-clangd',
-\   'coc-json',
-\   'coc-yaml'
+\	'coc-json',
+\	'coc-yaml',
+\	'coc-lua'
 \]

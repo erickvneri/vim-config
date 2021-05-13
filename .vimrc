@@ -27,10 +27,11 @@ call plug#begin('~/vim-config/.vim/plugged')
 	" line commenter
 	Plug 'scrooloose/nerdcommenter'
 	" colorscheme
-	Plug 'tomasiser/vim-code-dark'
+	"Plug 'tomasiser/vim-code-dark'
+	Plug 'dracula/vim', { 'as': 'dracula' }
 	" status line plugin
 	Plug 'vim-airline/vim-airline'
-	Plug  'vim-airline/vim-airline-themes'
+	"Plug  'vim-airline/vim-airline-themes'
 	" fs search engine
 	Plug 'kien/ctrlp.vim'
 	" git commands
@@ -64,7 +65,7 @@ au BufNewFile,BufRead *.py
 	\ fileformat=unix
 
 " Indentation config
-au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.yaml,*.md
+au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.yaml,*.md,*.lua
 	\ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au BufRead *.html
 	\ set filetype=htmlm4
@@ -85,7 +86,8 @@ au BufRead *.c,*.h
 
 """""""""Plugin configs
 " Colorscheme customizations
-colorscheme codedark
+"colorscheme codedark
+colorscheme dracula
 " Transparent background
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
@@ -103,8 +105,9 @@ autocmd BufWinLeave * call clearmatches()
 source ~/vim-config/.vim/preferences/coc.vim
 
 " Airline theme
-let g:airline_theme='base16_ashes'
-let g:airline#extensions#hunk#non_zero_only=1
+"let g:airline_theme='base16_ashes'
+"let g:airline#extensions#hunk#non_zero_only=1
+"let g:airline#extensions#tagbar#enabled = 0
 
 " Nerdtree config
 nnoremap <C-B> :NERDTreeToggle<CR>
@@ -122,8 +125,9 @@ let g:gitgutter_map_keys=0
 
 " Emmet config
 let g:user_emmet_leader_key = ','
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,js EmmetInstall
+"let g:user_emmet_install_global = 0
+"autocmd FileType html,css,js EmmetInstall
+
 
 " Markdown preview
 let g:mkdp_page_title = '${name} - Preview'
