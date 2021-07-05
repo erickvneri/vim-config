@@ -139,11 +139,12 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>c
 
 let b:coc_diagnostic_disable = 1
 let g:coc_global_extensions = [
-\	'coc-tsserver',
-\	'coc-html',
-\	'coc-python',
-\	'coc-clangd',
-\	'coc-json',
-\	'coc-yaml',
-\	'coc-lua'
+\  'coc-tsserver',
+\  'coc-html',
+\  'coc-python',
+\  'coc-clangd',
+\  'coc-json',
+\  'coc-yaml',
+\  'coc-eslint',
+\  'coc-lua'
 \]
