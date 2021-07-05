@@ -43,6 +43,20 @@ call plug#begin('~/vim-config/.vim/plugged')
 	Plug 'pangloss/vim-javascript'
 	Plug 'leafgarland/typescript-vim'
 	Plug 'maxmellon/vim-jsx-pretty'
+	Plug 'prettier/vim-prettier', {
+	\ 'do': 'yarn install',
+	\ 'for': [
+	\   'javascript',
+	\   'typescript',
+	\   'css',
+	\   'less',
+	\   'scss',
+	\   'json',
+	\   'graphql',
+	\   'markdown',
+	\   'vue',
+	\   'yaml',
+	\   'html'] }
 	" emmet engine
 	Plug 'mattn/emmet-vim'
 	" autoclosing (){}[]...
@@ -124,9 +138,11 @@ let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 
 " Emmet config
+" Emmet config
 let g:user_emmet_leader_key = ','
-"let g:user_emmet_install_global = 0
-"autocmd FileType html,css,js EmmetInstall
+let g:user_emmet_mode='i'
+let g:user_emmet_install_global = 1
+autocmd FileType html,css,js EmmetInstall
 
 
 " Markdown preview
