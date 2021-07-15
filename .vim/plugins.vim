@@ -37,6 +37,7 @@ call plug#begin('~/vim-config/.vim/plugged')
 	\   'vue',
 	\   'yaml',
 	\   'html'] }
+	Plug 'psf/black'
 	" emmet engine
 	Plug 'mattn/emmet-vim'
 	" autoclosing (){}[]...
