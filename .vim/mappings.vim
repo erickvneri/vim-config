@@ -18,10 +18,6 @@ nnoremap <Leader>Q :q!<CR>
 " development tool
 au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.tsx,*.yaml,*.md,*.scss,*.json
     \ nnoremap <Leader>w :Prettier<CR>:w<CR>
-" Python Black formatter
-" on save
-au BufNewFile,BufRead *.py
-    \ nnoremap <Leader>w :Black<CR>:w<CR>
 
 " Nerdtree config
 nnoremap <C-B> :NERDTreeToggle<CR>
