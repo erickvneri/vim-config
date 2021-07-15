@@ -9,6 +9,9 @@ au BufNewFile,BufRead *.py,*.vim
     \ autoindent
     \ fileformat=unix
 
+" Black formatting at save
+autocmd BufWrite *.py :Black
+
 " JS, JSX, HMTL, CSS, SCSS,
 " TS, MD, & Lua
 au BufNewFile,BufRead \
