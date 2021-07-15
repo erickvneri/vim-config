@@ -1,31 +1,46 @@
-""""""""""""""Buffer config
-" Python indentation config
-au BufNewFile,BufRead *.py
-	\ set tabstop=4
-	\ softtabstop=4
-	\ shiftwidth=4
-	\ expandtab
-	\ autoindent
-	\ fileformat=unix
+" Space-based Buffer Indentations
+"
+" Python & Vim
+au BufNewFile,BufRead *.py,*.vim
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
 
-" Indentation config
-au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.yaml,*.md,*.lua
-	\ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" JS, JSX, HMTL, CSS, SCSS,
+" TS, MD, & Lua
+au BufNewFile,BufRead \
+    \ *.js, *.jsx, *.html, \
+    \ *.css,*.scss,*.ts,*.tsx \
+    \ *.yaml,*.md,*.lua
+    \ set tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ expandtab
+
+" HTML-specific
 au BufRead *.html
-	\ set filetype=htmlm4
-	\ expandtab
+    \ set filetype=htmlm4
+    \ expandtab
+
+" JSON-specific
 au BufRead *.json
-	\ set tabstop=4
-	\ softtabstop=4
-	\ shiftwidth=4
-	\ autoindent
-	\ expandtab
-au BufRead *.c,*.h
-	\ set tabstop=4
-	\ softtabstop=4
-	\ shiftwidth=4
-	\ autoindent
-	\ expandtab
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ autoindent
+    \ expandtab
+
+" C & C++
+au BufRead
+    \ *.c,*.h,*.cpp,*.hpp
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ autoindent
+    \ expandtab
 """""""""""""""""""""""
 
 """""""""Plugin configs
