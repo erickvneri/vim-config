@@ -8,20 +8,18 @@ au BufNewFile,BufRead *.py,*.vim
     \ expandtab
     \ autoindent
     \ fileformat=unix
-
 " Black formatting at save
 autocmd BufWrite *.py :Black
 
 " JS, JSX, HMTL, CSS, SCSS,
 " TS, MD, & Lua
-au BufNewFile,BufRead \
-    \ *.js, *.jsx, *.html, \
-    \ *.css,*.scss,*.ts,*.tsx \
-    \ *.yaml,*.md,*.lua
+au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.md,*.lua
     \ set tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
     \ expandtab
+"Prettier formatting on save
+autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.md,*.lua :Prettier
 
 " HTML-specific
 au BufRead *.html
@@ -50,11 +48,13 @@ au BufRead
 " Colorscheme customizations
 "colorscheme codedark
 colorscheme dracula
+
 " Transparent background
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
 highlight EndOfBuffer guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
+
 " Extra whitespace highlight
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

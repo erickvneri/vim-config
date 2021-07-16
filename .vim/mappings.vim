@@ -14,10 +14,6 @@ nnoremap <Leader>mps :MarkdownPreviewStop<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
-" Prettier at save on FE
-" development tool
-au BufNewFile,BufRead *.js,*.html,*.css,*.ts,*.tsx,*.yaml,*.md,*.scss,*.json
-    \ nnoremap <Leader>w :Prettier<CR>:w<CR>
 
 " Nerdtree config
 nnoremap <C-B> :NERDTreeToggle<CR>
