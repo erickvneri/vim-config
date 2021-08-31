@@ -5,8 +5,9 @@ call plug#begin('~/vim-config/.vim/plugged')
 	" line commenter
 	Plug 'scrooloose/nerdcommenter'
 	" colorscheme
-	"Plug 'tomasiser/vim-code-dark'
-	Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'morhetz/gruvbox'
+    "Plug 'tomasiser/vim-code-dark'
+	"Plug 'dracula/vim', { 'as': 'dracula' }
 	" Indentation style
 	Plug 'Yggdroot/indentLine'
 	" status line plugin
@@ -37,6 +38,7 @@ call plug#begin('~/vim-config/.vim/plugged')
 	\   'vue',
 	\   'yaml',
 	\   'html'] }
+    " Python Black formatter
 	Plug 'psf/black'
 	" emmet engine
 	Plug 'mattn/emmet-vim'
@@ -44,6 +46,8 @@ call plug#begin('~/vim-config/.vim/plugged')
 	Plug 'jiangmiao/auto-pairs'
 	" conquer of completion
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " C lang highlighter
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
 	" markdown preview
 	Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 call plug#end()

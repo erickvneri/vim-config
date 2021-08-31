@@ -19,7 +19,7 @@ au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.md,*.lu
     \ shiftwidth=2
     \ expandtab
 "Prettier formatting on save
-autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.md,*.lua :Prettier
+autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier
 
 " HTML-specific
 au BufRead *.html
@@ -47,7 +47,8 @@ au BufRead
 """""""""Plugin configs
 " Colorscheme customizations
 "colorscheme codedark
-colorscheme dracula
+"colorscheme dracula
+colorscheme gruvbox
 
 " Transparent background
 highlight Normal guibg=NONE ctermbg=NONE
