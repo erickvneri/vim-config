@@ -48,7 +48,8 @@ au BufRead
 " Colorscheme customizations
 "colorscheme codedark
 "colorscheme dracula
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme edge
 
 " Transparent background
 highlight Normal guibg=NONE ctermbg=NONE

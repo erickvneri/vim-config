@@ -5,7 +5,8 @@ call plug#begin('~/vim-config/.vim/plugged')
 	" line commenter
 	Plug 'scrooloose/nerdcommenter'
 	" colorscheme
-    Plug 'morhetz/gruvbox'
+    Plug 'sainnhe/edge'
+    "Plug 'morhetz/gruvbox'
     "Plug 'tomasiser/vim-code-dark'
 	"Plug 'dracula/vim', { 'as': 'dracula' }
 	" Indentation style

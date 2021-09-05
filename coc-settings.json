@@ -17,6 +17,10 @@
             }
         }
     },
+    "clangd.path": "/usr/bin/clangd-12",
+    "clangd.enabled": true,
+    "clangd.disableCompletion": false,
+    "clangd.semanticHighlighting": true,
     "eslint.packageManager": "yarn",
     "eslint.autoFixOnSave": true,
     "eslint.run": "onSave"
