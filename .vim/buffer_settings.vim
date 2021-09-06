@@ -13,7 +13,7 @@ autocmd BufWrite *.py :Black
 
 " JS, JSX, HMTL, CSS, SCSS,
 " TS, MD, & Lua
-au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.md,*.lua
+au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md,*.lua
     \ set tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
