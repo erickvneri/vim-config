@@ -11,3 +11,4 @@ source ~/vim-config/.vim/preferences/coc.vim
 source ~/vim-config/.vim/plugin_settings.vim
 " Mappings
 source ~/vim-config/.vim/mappings.vim
+
