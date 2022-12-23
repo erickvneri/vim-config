@@ -1,7 +1,7 @@
 " Space-based Buffer Indentations
 "
 " Python & Vim
-au BufNewFile,BufRead *.py,*.vim
+au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs
     \ set tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
@@ -9,17 +9,17 @@ au BufNewFile,BufRead *.py,*.vim
     \ autoindent
     \ fileformat=unix
 " Black formatting at save
-autocmd BufWrite *.py :Black
+"autocmd BufWrite *.py :Black
 
 " JS, JSX, HMTL, CSS, SCSS,
 " TS, MD, & Lua
-au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md,*.lua
+au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md,*.lua,*.xml
     \ set tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
     \ expandtab
 "Prettier formatting on save
-autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier
+"autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier
 
 " HTML-specific
 au BufRead *.html
@@ -46,10 +46,10 @@ au BufRead
 
 """""""""Plugin configs
 " Colorscheme customizations
-"colorscheme codedark
+colorscheme codedark
 "colorscheme dracula
 "colorscheme gruvbox
-colorscheme edge
+"colorscheme edge
 
 " Transparent background
 highlight Normal guibg=NONE ctermbg=NONE
