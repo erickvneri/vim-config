@@ -23,5 +23,6 @@
     "clangd.semanticHighlighting": true,
     "eslint.packageManager": "yarn",
     "eslint.autoFixOnSave": true,
-    "eslint.run": "onSave"
+    "eslint.run": "onSave",
+    "Lua.runtime.version": "Lua 5.3"
 }
