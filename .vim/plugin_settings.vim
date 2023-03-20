@@ -20,4 +20,3 @@ autocmd FileType html,css,js EmmetInstall
 " Markdown preview
 let g:mkdp_page_title = '${name} - Preview'
 let g:mkdp_filetypes = ['markdown']
-

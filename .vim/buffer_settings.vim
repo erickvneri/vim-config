@@ -1,7 +1,7 @@
 " Space-based Buffer Indentations
 "
 " Python & Vim
-au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs
+au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs,*.sql
     \ set tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
@@ -9,7 +9,7 @@ au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs
     \ autoindent
     \ fileformat=unix
 " Black formatting at save
-"autocmd BufWrite *.py :Black
+autocmd BufWrite *.py :Black
 
 " JS, JSX, HMTL, CSS, SCSS,
 " TS, MD, & Lua
@@ -19,7 +19,7 @@ au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.m
     \ shiftwidth=2
     \ expandtab
 "Prettier formatting on save
-"autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier
+autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier
 
 " HTML-specific
 au BufRead *.html
