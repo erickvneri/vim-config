@@ -84,8 +84,8 @@ return require("packer").startup(function(use)
   --
   -- Markdown
   use {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    'toppair/peek.nvim',
+    run = 'deno task --quiet build:fast'
   }
 end)
 

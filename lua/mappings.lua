@@ -65,10 +65,9 @@ vim.cmd [[tnoremap <ESC> <C-\><C-n>]]
 
 --
 -- Markdown preview
-vim.cmd [[nnoremap <leader>mp :MarkdownPreview<CR>]]
-vim.cmd [[nnoremap <leader>mps :MarkdownPreviewStop<CR>]]
-vim.cmd [[let g:mkdp_page_title = '${name} - Preview']]
-vim.cmd "let g:mkdp_filetypes = ['markdown']"
+local mdp = require("peek")
+vim.keymap.set("n", "<leader>mp", mdp.open)
+vim.keymap.set("n", "<leader>mpc", mdp.close)
 
 --
 -- Emmet config

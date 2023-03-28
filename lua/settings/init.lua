@@ -23,6 +23,7 @@ local function setup()
   setup_buffer_language_indentations()
   setup_vimfugitive()
   setup_lsp()
+  require'lspconfig'.solidity_ls.setup{}
 end
 
 return { setup = setup }
