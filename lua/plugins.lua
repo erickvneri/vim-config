@@ -1,4 +1,4 @@
--- Copyright 2022 Erick Israel Vazquez Neri
+-- Copyright 2023 erickvneri
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -17,6 +17,30 @@ return require("packer").startup(function(use)
   --
   -- Packer
   use "wbthomason/packer.nvim"
+  -- LSP
+  use {
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v1.x",
+    requires = {
+      -- LSP Support
+      {"neovim/nvim-lspconfig"},             -- Required
+      {"williamboman/mason.nvim"},           -- Optional
+      {"williamboman/mason-lspconfig.nvim"}, -- Optional
+      {"python-lsp/python-lsp-server"},
+
+      -- Autocompletion
+      {"hrsh7th/nvim-cmp"},         -- Required
+      {"hrsh7th/cmp-nvim-lsp"},     -- Required
+      {"hrsh7th/cmp-buffer"},       -- Optional
+      {"hrsh7th/cmp-path"},         -- Optional
+      {"saadparwaiz1/cmp_luasnip"}, -- Optional
+      {"hrsh7th/cmp-nvim-lua"},     -- Optional
+
+      -- Snippets
+      {"L3MON4D3/LuaSnip"},             -- Required
+      {"rafamadriz/friendly-snippets"}, -- Optional
+    }
+  }
   --
   -- File Explorer
   --use "preservim/nerdtree"
@@ -63,11 +87,5 @@ return require("packer").startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
   }
-  --
-  -- Treesitter
-  use ("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-  use "nvim-treesitter/playground"
-  --
-  --
 end)
 

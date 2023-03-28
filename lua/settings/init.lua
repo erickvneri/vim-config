@@ -1,4 +1,4 @@
--- Copyright 2022 Erick Israel Vazquez Neri
+-- Copyright 2023 erickvneri
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
 -- Setup modules
 local setup_buffer_styles = require("settings.setup_buffer_styles")
 local setup_buffer_language_indentations = require("settings.setup_buffer_language_indentations")
-local setup_treesitter = require("settings.setup_treesitter")
 local setup_vimfugitive = require("settings.setup_vimfugitive")
+local setup_lsp = require("settings.setup_lsp")
 
 local function setup()
   setup_buffer_styles()
   setup_buffer_language_indentations()
-  setup_treesitter()
   setup_vimfugitive()
+  setup_lsp()
 end
 
 return { setup = setup }

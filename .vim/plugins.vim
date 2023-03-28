@@ -55,5 +55,7 @@ call plug#begin('~/vim-config/.vim/plugged')
     Plug 'xiyaowong/coc-sumneko-lua'
     " Rust
     Plug 'rust-lang/rust.vim'
+    " Solidity
+    Plug 'tomlion/vim-solidity'
 call plug#end()
 """""""""""""""""""""""""""

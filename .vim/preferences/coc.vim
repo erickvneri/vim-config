@@ -150,4 +150,5 @@ let g:coc_global_extensions = [
 \  'coc-eslint',
 \  'coc-lua',
 \  'coc-rust-analyzer',
+"\  'coc-solidity',
 \]

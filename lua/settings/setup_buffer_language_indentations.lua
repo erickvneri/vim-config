@@ -1,4 +1,4 @@
--- Copyright 2022 Erick Israel Vazquez Neri
+-- Copyright 2023 erickvneri
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -13,12 +13,11 @@
 -- limitations under the License.
 --
 -- Globals
-local api = vim.api
 local cmd = vim.cmd
 
 --
 -- Language Buffer Indentations
-local function setup_buffer_language_indentations()
+local function setup()
   -- 4-spaced indentation
   cmd [[
   au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs,*.sql
@@ -41,4 +40,4 @@ local function setup_buffer_language_indentations()
   --cmd [[autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier]]
 end
 
-return setup_buffer_language_indentations
+return setup
