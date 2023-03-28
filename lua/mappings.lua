@@ -17,10 +17,13 @@
 vim.g.mapleader = " "
 
 -- File Explorer
---vim.cmd [[nnoremap <C-B> :NERDTreeToggle<CR>]]
---vim.cmd [[let g:NERDTreeWinSize=32]]
+--
+-- NerdTree
+vim.cmd [[nnoremap <C-B> :NERDTreeToggle<CR>]]
+vim.cmd [[let g:NERDTreeWinSize=32]]
+-- Telescope
 local ts = require("telescope.builtin")
-vim.keymap.set("n", "<C-B>", ts.find_files, {})
+vim.keymap.set("n", "<leader>pf", ts.find_files, {})
 vim.keymap.set("n", "<C-P>", ts.git_files, {})
 vim.keymap.set("n", "<C-F>", function()
   ts.grep_string({ search = vim.fn.input("grep > ") })

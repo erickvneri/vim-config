@@ -43,7 +43,7 @@ return require("packer").startup(function(use)
   }
   --
   -- File Explorer
-  --use "preservim/nerdtree"
+  use "preservim/nerdtree"
   use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.1",
