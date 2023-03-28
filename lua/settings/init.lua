@@ -12,20 +12,18 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 --
---
--- This goes to README
--- packer setup: https://github.com/wbthomason/packer.nvim#quickstart
+-- Setup modules
+local setup_buffer_styles = require("settings.setup_buffer_styles")
+local setup_buffer_language_indentations = require("settings.setup_buffer_language_indentations")
+local setup_treesitter = require("settings.setup_treesitter")
+local setup_vimfugitive = require("settings.setup_vimfugitive")
 
--- Main settings
---
--- Documentations
--- https://neovim.io/doc/user/options.html
--- https://neovim.io/doc/user/options.html#option-summary
--- https://neovim.io/doc/user/lua.html
+local function setup()
+  setup_buffer_styles()
+  setup_buffer_language_indentations()
+  setup_treesitter()
+  setup_vimfugitive()
+end
 
--- Load environment
-require("options")
-require("plugins")
-require("mappings")
-require("settings").setup()
+return { setup = setup }
 

@@ -11,21 +11,8 @@
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
---
---
--- This goes to README
--- packer setup: https://github.com/wbthomason/packer.nvim#quickstart
+local function setup_vimfugitive()
+  vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+end
 
--- Main settings
---
--- Documentations
--- https://neovim.io/doc/user/options.html
--- https://neovim.io/doc/user/options.html#option-summary
--- https://neovim.io/doc/user/lua.html
-
--- Load environment
-require("options")
-require("plugins")
-require("mappings")
-require("settings").setup()
-
+return setup_vimfugitive

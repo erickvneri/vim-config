@@ -12,20 +12,25 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 --
---
--- This goes to README
--- packer setup: https://github.com/wbthomason/packer.nvim#quickstart
+-- Global objects
+local options = vim.o
 
--- Main settings
---
--- Documentations
--- https://neovim.io/doc/user/options.html
--- https://neovim.io/doc/user/options.html#option-summary
--- https://neovim.io/doc/user/lua.html
-
--- Load environment
-require("options")
-require("plugins")
-require("mappings")
-require("settings").setup()
+-- Global settings
+options.relativenumber = true
+options.number = true
+options.numberwidth = 1
+options.showcmd = true
+options.ruler = true
+options.encoding = "UTF-8"
+options.showmatch = true
+options.showmode = true
+options.laststatus = 2
+options.splitbelow = true
+options.splitright = true
+options.clipboard = "unnamedplus"
+options.mouse = "a"
+options.list = true
+vim.opt.listchars = { trail = "·", tab = "»·" }
+options.syntax = true
+options.filetype = "off"
 
