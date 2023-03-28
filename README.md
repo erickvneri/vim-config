@@ -20,6 +20,8 @@ This vim configuration supports the following technologies:
 
 ### Setup
 
+1. Install [vim-plug](https://github.com/junegunn/vim-plug).
+
 1.  Copy `init.vim` to `~/.config/nvim`:
 
         cp init.vim ~/.config/nvim
