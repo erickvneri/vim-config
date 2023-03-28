@@ -1,16 +1,20 @@
-# Vim configuration
+# My Neovim Environment
 
-```
-This a personal configuration for the vim text editor as it
-is my main IDE at the moment, because it's fun and practical.
-```
+These are my personal Neovim configurations, so scaffolding may seems
+weird to you, but it makes sense to me. However, if you think it can be
+improved _(of course, it can be improved considerably)_ please do not
+hesitate in leaving a message or just fork along.
+
+---
 
 This vim configuration supports the following technologies:
 
-- Python3.
-- Node JS.
-- Angular.
-- React.
+- Python3
+- Node JS
+- Angular
+- React
+- Solidity
+- Rust
 - C-programming.
 
   - Setup Syntax Highlighting:
@@ -20,15 +24,42 @@ This vim configuration supports the following technologies:
 
 ### Setup
 
-1. Install [vim-plug](https://github.com/junegunn/vim-plug).
+1. **vim-script based**
 
-1.  Copy `init.vim` to `~/.config/nvim`:
+    - Install [vim-plug](https://github.com/junegunn/vim-plug).
 
-        cp init.vim ~/.config/nvim
+    - Copy `init.vim` at `~/.config/nvim`:
 
-1.  Install [Vim Plug](https://github.com/junegunn/vim-plug).
-1.  Open vim/Neovim and Install _Plugins_:
+            cp init.vim ~/.config/nvim
 
-        vi .
-        :PlugInstall
-        :q!
+    - Open vim/Neovim and Install _Plugins_:
+
+            nvim
+            :PlugInstall
+            :q!
+
+1. **lua based**
+
+    - Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
+    - Copy `init.lua` at `~/.config/nvim`.
+
+           cp ~/vim-config/init.lua ~/.config/nvim
+
+    - Copy `lua/` folder at `~/.config/nvim`
+      
+           cp -r ~/vim-config/lua ~/.config/nvim
+
+    - Install plugins
+
+           nvim
+           :PackerSync
+           :q!
+
+### Recomendations
+
+To avoid using the default vim editor, put the following lines into your
+`~/.profile` or `~/.bashrdc` files:
+
+      alias vi="nvim"
+      alias vim="nvim"
+
