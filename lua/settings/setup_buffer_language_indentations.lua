@@ -37,7 +37,7 @@ local function setup()
     \ shiftwidth=2
     \ expandtab]]
   -- On save JS, and others
-  --cmd [[autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier]]
+  cmd [[autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier]]
 end
 
 return setup

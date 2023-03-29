@@ -17,13 +17,14 @@ local setup_buffer_styles = require("settings.setup_buffer_styles")
 local setup_buffer_language_indentations = require("settings.setup_buffer_language_indentations")
 local setup_vimfugitive = require("settings.setup_vimfugitive")
 local setup_lsp = require("settings.setup_lsp")
+local setup_solidity = require("settings.setup_solidity")
 
 local function setup()
   setup_buffer_styles()
   setup_buffer_language_indentations()
   setup_vimfugitive()
   setup_lsp()
-  require'lspconfig'.solidity_ls.setup{}
+  setup_solidity()
 end
 
 return { setup = setup }

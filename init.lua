@@ -24,8 +24,8 @@
 -- https://neovim.io/doc/user/lua.html
 
 -- Load environment
-require("options")
-require("plugins")
-require("mappings")
+require("options").setup()
+require("plugins").setup()
+require("mappings").setup()
 require("settings").setup()
 
