@@ -13,31 +13,81 @@
 -- limitations under the License.
 --
 -- Globals
-local cmd = vim.cmd
+local api = vim.api
+local opt = vim.opt
 
---
--- Language Buffer Indentations
-local function setup()
+local function setup_indentation()
   -- 4-spaced indentation
-  cmd [[
-  au BufNewFile,BufRead *.py,*.vim,*.sh,*.rs,*.sql
-    \ set tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix]]
-  -- On save Python
-  cmd [[autocmd BufWrite *.py :Black]]
+    api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+      pattern = { "*.py", "*.vim", "*.sh", "*.rs", "*.sql" },
+      callback = function()
+        opt.tabstop = 4
+        opt.softtabstop = 4
+        opt.shiftwidth = 4
+        opt.expandtab = true
+        opt.autoindent = true
+        opt.fileformat = "unix"
+      end
+    })
 
   -- 2-spaced indentation
-  cmd [[au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md,*.lua,*.xml
-    \ set tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ expandtab]]
-  -- On save JS, and others
-  cmd [[autocmd BufWrite *.js,*.jsx,*.html,*.css,*.scss,*.ts,*.tsx,*.yaml,*.yml,*.md :Prettier]]
+  api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    callback = function()
+      opt.tabstop = 2
+      opt.softtabstop = 2
+      opt.shiftwidth = 2
+      opt.expandtab = true
+    end,
+    pattern = {
+      "*.js",
+      "*.jsx",
+      "*.ts",
+      "*.tsx",
+      "*.html",
+      "*.css",
+      "*.scss",
+      "*.yaml",
+      "*.yml",
+      "*.md",
+      "*.lua",
+      "*.xml",
+      "*.sol",
+    }
+  })
+end
+
+-- On save callbacks
+local function setup_autocmd()
+  api.nvim_create_autocmd("BufWrite", {
+    pattern = { "*.py" },
+    command = ":Black"
+  })
+
+  api.nvim_create_autocmd("Bufwrite", {
+    command = ":Prettier",
+    pattern = {
+      "*.js",
+      "*.jsx",
+      "*.html",
+      "*.css",
+      "*.scss",
+      "*.ts",
+      "*.tsx",
+      "*.yaml",
+      "*.yml",
+      "*.md"
+    }
+  })
+
+  api.nvim_create_autocmd("BufWrite", {
+    pattern = { "*.rs" },
+    command = ":RustFmt"
+  })
+end
+
+local function setup()
+  assert(pcall(setup_indentation), "indentation setup failed")
+  assert(pcall(setup_autocmd), "autocmd setup failed")
 end
 
 return setup

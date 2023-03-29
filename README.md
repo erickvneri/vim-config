@@ -24,7 +24,7 @@ This vim configuration supports the following technologies:
 
 ### Setup
 
-1. **vim-script based**
+1.  **vim-script based**
 
     - Install [vim-plug](https://github.com/junegunn/vim-plug).
 
@@ -38,7 +38,7 @@ This vim configuration supports the following technologies:
             :PlugInstall
             :q!
 
-1. **lua based**
+1.  **lua based**
 
     - Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
     - Copy `init.lua` at `~/.config/nvim`.
@@ -46,7 +46,7 @@ This vim configuration supports the following technologies:
            cp ~/vim-config/init.lua ~/.config/nvim
 
     - Copy `lua/` folder at `~/.config/nvim`
-      
+
            cp -r ~/vim-config/lua ~/.config/nvim
 
     - Install plugins
@@ -55,11 +55,14 @@ This vim configuration supports the following technologies:
            :PackerSync
            :q!
 
+    - Install language servers
+
+          :MasonInstall deno
+
 ### Recomendations
 
 To avoid using the default vim editor, put the following lines into your
-`~/.profile` or `~/.bashrdc` files:
+`~/.profile` or `~/.bashrc` files:
 
       alias vi="nvim"
       alias vim="nvim"
-

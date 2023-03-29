@@ -12,12 +12,12 @@ local function setup()
     -- will need "apt install python3.10-venv"
     "jedi_language_server",
     "rust_analyzer",
-    "solc",
     "luau_lsp",
     "yamlls",
     "cssls",
     "html",
     "marksman",
+    "solang",
   })
 
   lsp.set_preferences({

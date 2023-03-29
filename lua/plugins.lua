@@ -86,16 +86,29 @@ local function setup()
     -- Markdown
     -- Note: must install deno via :Mason
     use {
-      'toppair/peek.nvim',
-      run = 'deno task --quiet build:fast'
+      "toppair/peek.nvim",
+      run = "deno task --quiet build:fast"
     }
     --
     -- Prettier
     use {
-      'prettier/vim-prettier',
-      run = 'yarn install',
-      ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}
-}
+      "prettier/vim-prettier",
+      run = "yarn install",
+      ft = {
+        "javascript",
+        "typescript",
+        "css",
+        "less",
+        "scss",
+        "graphql",
+        "markdown",
+        "vue",
+        "html",
+      }
+    }
+    --
+    -- Rust
+    use "rust-lang/rust.vim"
   end)
 end
 

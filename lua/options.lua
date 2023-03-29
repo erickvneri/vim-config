@@ -31,7 +31,7 @@ local function setup()
   options.clipboard = "unnamedplus"
   options.mouse = "a"
   options.list = true
-  vim.opt.listchars = { trail = "·", tab = "»·" }
+  vim.opt.listchars = { trail = "·", tab = "»·", lead = "·", leadmultispace = "···+" }
   options.syntax = true
   options.filetype = "off"
 end
