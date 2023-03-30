@@ -34,6 +34,27 @@ local function setup()
   set("n", "<C-F>", function(str)
     ts.grep_string({ search = vim.fn.input("grep > ") })
   end)
+  -- netrw
+  set("n", "<leader>pv", vim.cmd.Ex)
+
+
+  --
+  -- Move selection
+  set("v", "J", ":m '>+1<CR>gv=gv")
+  set("v", "K", ":m '<-2<CR>gv=gv")
+
+  --
+  -- Search terms
+  --
+  -- Keep centered
+  set("n", "n", "nzzzv")
+  set("n", "N", "Nzzzv")
+  -- Clear selections
+  set("n", "Q", ":noh<CR>")
+
+  --
+  -- Paragraph yank
+  set("n", "<leader>y", "\"+yap")
 
   --
   -- Save & Quit shortcut

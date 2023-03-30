@@ -57,7 +57,7 @@ This vim configuration supports the following technologies:
 
     - Install language servers
 
-          :MasonInstall deno
+          :MasonInstall deno black
 
 ### Recomendations
 
