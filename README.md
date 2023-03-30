@@ -61,8 +61,12 @@ This vim configuration supports the following technologies:
 
 ### Recomendations
 
-To avoid using the default vim editor, put the following lines into your
-`~/.profile` or `~/.bashrc` files:
+- To avoid using the default vim editor, put the following lines into your
+  `~/.profile` or `~/.bashrc` files:
 
       alias vi="nvim"
       alias vim="nvim"
+
+- For Python virtualenvironments, it may be necessary to run the following:
+
+      python -m pip install neovim jedi pylint black
