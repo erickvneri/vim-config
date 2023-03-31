@@ -15,9 +15,9 @@
 -- Globals
 local set = vim.keymap.set
 local cmd = vim.cmd
+
 --
 -- Buffer mappings
---
 vim.g.mapleader = " "
 
 
@@ -25,8 +25,8 @@ local function setup()
   -- File Explorer
   --
   -- NerdTree
-  set("n", "<C-B>", ":NERDTreeToggle<CR>")
-  --vim.cmd [[let g:NERDTreeWinSize=32]]
+  vim.cmd [[nnoremap <C-B> :NERDTreeToggle<CR>]]
+  vim.cmd [[let g:NERDTreeWinSize=32]]
   -- Telescope
   local ts = require("telescope.builtin")
   set("n", "<leader>pf", ts.find_files, {})
