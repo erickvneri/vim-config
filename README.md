@@ -15,7 +15,7 @@ This vim configuration supports the following technologies:
 - React
 - Solidity
 - Rust
-- C-programming.
+- C-programming _(only at vim-script configs)_.
 
   - Setup Syntax Highlighting:
 
@@ -67,6 +67,19 @@ This vim configuration supports the following technologies:
       alias vi="nvim"
       alias vim="nvim"
 
-- For Python virtualenvironments, it may be necessary to run the following:
+- For Python virtual environments, it may be necessary to run the following:
 
       python -m pip install neovim jedi pylint black
+
+### Troubleshooting
+
+- In some machines, the `peek.vim` plugin fails due to an unsatisfied
+  deno version requirement, which means that if you install deno from
+  **snap**, you'll get a _deno v1.27.1_ and the plugin setup will fail.
+
+  Therefore, you must install deno from the bash script provided by deno's site
+  which currently installs _deno v1.32.1_, so:
+
+        curl -fsSL https://deno.land/x/install/install.sh | sh && \
+        cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
+        deno task build:fast
