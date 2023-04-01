@@ -7,24 +7,23 @@ hesitate in leaving a message or just fork along.
 
 ---
 
-This vim configuration supports the following technologies:
+This neovim configuration supports the following technologies:
 
-- Python3
-- Node JS
-- Angular
+- Python3.^
+- NodeJS
 - React
 - Solidity
 - Rust
-- C-programming _(only at vim-script configs)_.
+- C-programming _(available for vim-script based setup)_.
 
-  - Setup Syntax Highlighting:
+  - Syntax highlight requirement:
 
         sudo apt install clangd-12 ccls
         sudo ln -T /usr/bin/clangd-12 /usr/bin/clangd
 
 ### Setup
 
-1.  **vim-script based**
+1.  **vim-based setup**
 
     - Install [vim-plug](https://github.com/junegunn/vim-plug).
 
@@ -32,30 +31,25 @@ This vim configuration supports the following technologies:
 
             cp init.vim ~/.config/nvim
 
-    - Open vim/Neovim and Install _Plugins_:
+    - Open Neovim and install the plugins:
 
             nvim
             :PlugInstall
-            :q!
 
-1.  **lua based**
+1.  **lua-based setup**
 
     - Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
-    - Copy `init.lua` at `~/.config/nvim`.
 
-           cp ~/vim-config/init.lua ~/.config/nvim
+    - Copy everything from the `vim-config/nvim_lua/` folder into `~/.config/nvim`:
 
-    - Copy `lua/` folder at `~/.config/nvim`
+           cp ~/vim-config/nvim_lua/* ~/.config/nvim
 
-           cp -r ~/vim-config/lua ~/.config/nvim
-
-    - Install plugins
+    - Open Neovim and install the plugins:
 
            nvim
            :PackerSync
-           :q!
 
-    - Install language servers
+    - Recommended language servers manual installation:
 
           :MasonInstall deno black
 
@@ -83,3 +77,9 @@ This vim configuration supports the following technologies:
         curl -fsSL https://deno.land/x/install/install.sh | sh && \
         cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
         deno task build:fast
+
+---
+
+### Donations
+
+If you feel supportive, consider sharing some ETH at `0xEf5e2a96593376C9b9E488CA27458Ad070f30cBE`.
