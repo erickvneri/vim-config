@@ -78,6 +78,8 @@ This neovim configuration supports the following technologies:
         cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
         deno task build:fast
 
+- `Telescope` **grep** features requires additional dependencies referred [Here](https://pythonrepo.com/repo/nvim-telescope-telescope-nvim-python-command-line-tools#suggested-dependencies).
+
 ---
 
 ### Donations
