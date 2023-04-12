@@ -104,7 +104,6 @@ local function setup()
         "markdown",
         "vue",
         "html",
-        "yaml"
       }
     }
     --
