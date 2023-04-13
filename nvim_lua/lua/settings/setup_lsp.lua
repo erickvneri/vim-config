@@ -18,6 +18,7 @@ local function setup()
     "html",
     "marksman",
     "solang",
+    "jsonls"
   })
 
   lsp.set_preferences({
