@@ -52,6 +52,7 @@ local function setup_indentation()
       "*.lua",
       "*.xml",
       "*.sol",
+      "*.json"
     }
   })
 end
