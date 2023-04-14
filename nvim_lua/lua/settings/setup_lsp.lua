@@ -21,10 +21,14 @@ local function setup()
     "jsonls"
   })
 
+  --
+  -- No icons please!
   lsp.set_preferences({
     sign_icons = {}
   })
 
+  --
+  -- On-buffer specific bindings
   lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
@@ -37,11 +41,25 @@ local function setup()
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opt)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.preferences() end, opt)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opt)
-    --vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.signature_help() end, opt)
+    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
   end)
 
+  --
+  -- Server specifics
+  lsp.configure("yamlls", {
+    settings = {
+      yaml ={
+        keyOrdering = false
+      }
+    }
+  })
+
+  --
+  -- Run setup
   lsp.setup()
 
+  --
+  -- Error diagnostics
   vim.diagnostic.config({
     virtual_text = true,
     signs = true,
