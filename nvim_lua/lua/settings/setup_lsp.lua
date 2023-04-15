@@ -41,7 +41,7 @@ local function setup()
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opt)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.preferences() end, opt)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opt)
-    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
+    --vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
   end)
 
   --
