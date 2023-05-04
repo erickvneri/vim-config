@@ -7,23 +7,24 @@ hesitate in leaving a message or just fork along.
 
 ---
 
-This neovim configuration supports the following technologies:
+This vim configuration supports the following technologies:
 
-- Python3.^
-- NodeJS
+- Python3
+- Node JS
+- Angular
 - React
 - Solidity
 - Rust
-- C-programming _(available for vim-script based setup)_.
+- C-programming _(only at vim-script configs)_.
 
-  - Syntax highlight requirement:
+  - Setup Syntax Highlighting:
 
         sudo apt install clangd-12 ccls
         sudo ln -T /usr/bin/clangd-12 /usr/bin/clangd
 
 ### Setup
 
-1.  **vim-based setup**
+1.  **vim-script based**
 
     - Install [vim-plug](https://github.com/junegunn/vim-plug).
 
@@ -31,25 +32,30 @@ This neovim configuration supports the following technologies:
 
             cp init.vim ~/.config/nvim
 
-    - Open Neovim and install the plugins:
+    - Open vim/Neovim and Install _Plugins_:
 
             nvim
             :PlugInstall
+            :q!
 
-1.  **lua-based setup**
+1.  **lua based**
 
     - Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
+    - Copy `init.lua` at `~/.config/nvim`.
 
-    - Copy everything from the `vim-config/nvim_lua/` folder into `~/.config/nvim`:
+           cp ~/vim-config/init.lua ~/.config/nvim
 
-           cp ~/vim-config/nvim_lua/* ~/.config/nvim
+    - Copy `lua/` folder at `~/.config/nvim`
 
-    - Open Neovim and install the plugins:
+           cp -r ~/vim-config/lua ~/.config/nvim
+
+    - Install plugins
 
            nvim
            :PackerSync
+           :q!
 
-    - Recommended language servers manual installation:
+    - Install language servers
 
           :MasonInstall deno black
 
@@ -78,10 +84,8 @@ This neovim configuration supports the following technologies:
         cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
         deno task build:fast
 
-- `Telescope` **grep** features requires additional dependencies referred [Here](https://pythonrepo.com/repo/nvim-telescope-telescope-nvim-python-command-line-tools#suggested-dependencies).
+- To fully enable PlantUML support, Java and Graphviz are required:
 
----
-
-### Donations
-
-If you feel supportive, consider sharing some ETH at `0xEf5e2a96593376C9b9E488CA27458Ad070f30cBE`.
+        sudo apt update && \
+        sudo apt install default-jdk -y && \
+        sudo apt install graphviz -y
