@@ -87,5 +87,4 @@ This vim configuration supports the following technologies:
 - To fully enable PlantUML support, Java and Graphviz are required:
 
         sudo apt update && \
-        sudo apt install default-jdk -y && \
-        sudo apt install graphviz -y
+        sudo apt install default-jdk graphviz -y

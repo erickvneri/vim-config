@@ -113,6 +113,7 @@ local function setup()
     --
     -- PlantUML
     use "aklt/plantuml-syntax"
+    use "scrooloose/vim-slumlord"
     use "tyru/open-browser.vim"
     use "weirongxu/plantuml-previewer.vim"
   end)
