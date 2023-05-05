@@ -88,3 +88,7 @@ This vim configuration supports the following technologies:
 
         sudo apt update && \
         sudo apt install default-jdk graphviz -y
+
+### Support
+
+If you feel supportive for this contribution, feel free to share some ETH at: **0xEf5e2a96593376C9b9E488CA27458Ad070f30cBE**.
