@@ -19,7 +19,15 @@ local opt = vim.opt
 local function setup_indentation()
   -- 4-spaced indentation
     api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-      pattern = { "*.py", "*.vim", "*.sh", "*.rs", "*.sql" },
+      pattern = {
+        "*.py",
+        "*.vim",
+        "*.sh",
+        "*.rs",
+        "*.sql",
+        "*.plantuml",
+        "*.uml"
+      },
       callback = function()
         opt.tabstop = 4
         opt.softtabstop = 4
