@@ -76,10 +76,10 @@ local function setup()
   set("n", "<C-T>", ":tab split<CR>")
   -- Close current tab
   set("n", "<C-C>", ":tabc<CR>")
-  -- Jump to next tab
-  set("n", "<C-N>", ":tabn<CR>")
-  -- Alt
-  --set("n", "<Tab>", ":tabn<CR>")
+  -- Jump to left tab
+  set("n", "<C-N>", ":tabp<CR>")
+  -- Jump to right tab
+  set("n", "<C-m>", ":tabn<CR>")
 
   --
   -- Terminal mappings
