@@ -9,85 +9,85 @@ hesitate in leaving a message or just fork along.
 
 This vim configuration supports the following technologies:
 
-- Python3
-- Node JS
-- Angular
-- React
-- Solidity
-- Rust
-- C-programming _(only at vim-script configs)_.
+-   Python3
+-   Node JS
+-   Angular
+-   React
+-   Solidity
+-   Rust
+-   C-programming _(only at vim-script configs)_.
 
-  - Setup Syntax Highlighting:
+    -   Setup Syntax Highlighting:
 
-        sudo apt install clangd-12 ccls
-        sudo ln -T /usr/bin/clangd-12 /usr/bin/clangd
+            sudo apt install clangd-12 ccls
+            sudo ln -T /usr/bin/clangd-12 /usr/bin/clangd
 
 ### Setup
 
 1.  **vim-script based**
 
-    - Install [vim-plug](https://github.com/junegunn/vim-plug).
+    -   Install [vim-plug](https://github.com/junegunn/vim-plug).
 
-    - Copy `init.vim` at `~/.config/nvim`:
+    -   Copy `init.vim` at `~/.config/nvim`:
 
-            cp init.vim ~/.config/nvim
+              cp init.vim ~/.config/nvim
 
-    - Open vim/Neovim and Install _Plugins_:
+    -   Open vim/Neovim and Install _Plugins_:
 
-            nvim
-            :PlugInstall
-            :q!
+              nvim
+              :PlugInstall
+              :q!
 
 1.  **lua based**
 
-    - Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
-    - Copy `init.lua` at `~/.config/nvim`.
+    -   Install [Packer](https://github.com/wbthomason/packer.nvim#quickstart).
+    -   Copy `init.lua` at `~/.config/nvim`.
 
-           cp ~/vim-config/init.lua ~/.config/nvim
+             cp ~/vim-config/init.lua ~/.config/nvim
 
-    - Copy `lua/` folder at `~/.config/nvim`
+    -   Copy `lua/` folder at `~/.config/nvim`
 
-           cp -r ~/vim-config/lua ~/.config/nvim
+             cp -r ~/vim-config/lua ~/.config/nvim
 
-    - Install plugins
+    -   Install plugins
 
-           nvim
-           :PackerSync
-           :q!
+             nvim
+             :PackerSync
+             :q!
 
-    - Install language servers
+    -   Install language servers
 
-          :MasonInstall deno black
+            :MasonInstall deno black lua_language_server
 
 ### Recomendations
 
-- To avoid using the default vim editor, put the following lines into your
-  `~/.profile` or `~/.bashrc` files:
+-   To avoid using the default vim editor, put the following lines into your
+    `~/.profile` or `~/.bashrc` files:
 
-      alias vi="nvim"
-      alias vim="nvim"
+        alias vi="nvim"
+        alias vim="nvim"
 
-- For Python virtual environments, it may be necessary to run the following:
+-   For Python virtual environments, it may be necessary to run the following:
 
-      python -m pip install neovim jedi pylint black
+        python -m pip install neovim jedi pylint black
 
 ### Troubleshooting
 
-- In some machines, the `peek.vim` plugin fails due to an unsatisfied
-  deno version requirement, which means that if you install deno from
-  **snap**, you'll get a _deno v1.27.1_ and the plugin setup will fail.
+-   In some machines, the `peek.vim` plugin fails due to an unsatisfied
+    deno version requirement, which means that if you install deno from
+    **snap**, you'll get a _deno v1.27.1_ and the plugin setup will fail.
 
-  Therefore, you must install deno from the bash script provided by deno's site
-  which currently installs _deno v1.32.1_, so:
+    Therefore, you must install deno from the bash script provided by deno's site
+    which currently installs _deno v1.32.1_, so:
 
-        curl -fsSL https://deno.land/x/install/install.sh | sh && \
-        cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
-        deno task build:fast
+          curl -fsSL https://deno.land/x/install/install.sh | sh && \
+          cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
+          deno task build:fast
 
-- To fully enable PlantUML support, Java and Graphviz are required:
+-   To fully enable PlantUML support, Java and Graphviz are required:
 
-        sudo apt update && \
-        sudo apt install default-jdk graphviz -y
+          sudo apt update && \
+          sudo apt install default-jdk graphviz -y
 
 ### Support
 

@@ -112,9 +112,9 @@ local function setup()
     use "rust-lang/rust.vim"
     --
     -- PlantUML (only use if necessary)
-    --use "aklt/plantuml-syntax"
-    --use "tyru/open-browser.vim"
-    --use "weirongxu/plantuml-previewer.vim"
+    use "aklt/plantuml-syntax"
+    use "tyru/open-browser.vim"
+    use "weirongxu/plantuml-previewer.vim"
     --use "scrooloose/vim-slumlord"
   end)
 end

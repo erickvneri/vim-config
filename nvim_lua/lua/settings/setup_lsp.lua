@@ -12,7 +12,6 @@ local function setup()
     -- will need "apt install python3.10-venv"
     "jedi_language_server",
     "rust_analyzer",
-    "luau_lsp",
     "yamlls",
     "cssls",
     "html",
@@ -30,6 +29,9 @@ local function setup()
   --
   -- On-buffer specific bindings
   lsp.on_attach(function(client, bufnr)
+    -- Triggered completion, is it necessary?
+    -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
