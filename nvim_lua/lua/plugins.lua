@@ -55,10 +55,11 @@ local function setup()
     use "kien/ctrlp.vim"
     --
     -- Color schemes
-    use "sainnhe/edge"
+    --use { "sainnhe/edge", as = "edge" }
     --use "morhetz/gruvbox"
     --use "tomasiser/vim-code-dark"
     --use "dracula/vim"
+    use { "catppuccin/nvim", as = "catppuccin" }
     --
     -- Git diff and fugitive
     use "airblade/vim-gitgutter"
