@@ -14,6 +14,7 @@
 local lsp = require("lsp-zero")
 local lsp_config = require("lspconfig")
 
+
 local function _lua_server_setup()
   lsp_config.lua_ls.setup({
     settings = {
@@ -30,9 +31,7 @@ local function _lua_server_setup()
             "/usr/share/lua/5.3/?.lua",
             "/usr/share/lua/5.3/?/init.lua",
             "/home/asdeoips/.st_lua_libs/lua_libs-api_v5/?.lua",
-            "/home/asdeoips/.st_lua_libs/lua_libs-api_v5/?/init.lua",
-            "./?.lua",
-            "./?/init.lua"
+            "/home/asdeoips/.st_lua_libs/lua_libs-api_v5/?/init.lua"
           }
         }
       }
