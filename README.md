@@ -57,7 +57,7 @@ This vim configuration supports the following technologies:
 
     -   Install language servers
 
-            :MasonInstall deno black lua_language_server
+            :MasonInstall deno black lua_language_server flake8
 
 ### Recomendations
 
