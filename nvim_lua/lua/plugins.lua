@@ -117,6 +117,10 @@ local function setup()
     use "tyru/open-browser.vim"
     use "weirongxu/plantuml-previewer.vim"
     --use "scrooloose/vim-slumlord"
+    --
+    -- neovim SQL client
+    use "tpope/vim-dadbod"
+    use "kristijanhusak/vim-dadbod-ui"
   end)
 end
 
