@@ -119,8 +119,8 @@ local function setup()
     --use "scrooloose/vim-slumlord"
     --
     -- neovim SQL client
-    use "tpope/vim-dadbod"
-    use "kristijanhusak/vim-dadbod-ui"
+    --use "tpope/vim-dadbod"
+    --use "kristijanhusak/vim-dadbod-ui"
   end)
 end
 
