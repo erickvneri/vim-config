@@ -92,22 +92,9 @@ local function setup()
     }
     --
     -- Prettier
-    use {
-      "prettier/vim-prettier",
-      run = "yarn install",
-      ft = {
-        "javascript",
-        "typescript",
-        "css",
-        "less",
-        "scss",
-        "graphql",
-        "markdown",
-        "vue",
-        "html",
-        "yaml",
-      }
-    }
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
     --
     -- Rust
     use "rust-lang/rust.vim"
