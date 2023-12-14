@@ -61,9 +61,10 @@ local function setup()
     --use "dracula/vim"
     use { "catppuccin/nvim", as = "catppuccin" }
     --
-    -- Git diff and fugitive
+    -- Git diff, fugitive, gitblame
     use "airblade/vim-gitgutter"
     use "tpope/vim-fugitive"
+    use "f-person/git-blame.nvim"
     --
     -- Status bar
     use "vim-airline/vim-airline"
