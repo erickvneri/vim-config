@@ -84,10 +84,18 @@ This vim configuration supports the following technologies:
         cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
         ~/.deno/bin/deno task build:fast
 
+- To address some issues related to Python's jedi library:
+
+        sudo apt install python3.x-venv python3.x-dev
+
 - To fully enable PlantUML support, Java and Graphviz are required:
 
         sudo apt update && \
         sudo apt install default-jdk graphviz -y
+
+- Working with PostgreSQL?
+
+        sudo apt install postgresql libpq-dev python3.11-dev
 
 ### Support
 
