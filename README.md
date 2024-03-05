@@ -80,6 +80,7 @@ This vim configuration supports the following technologies:
   Therefore, you must install deno from the bash script provided by deno's site
   which currently installs _deno v1.32.1_, so:
 
+        sudo apt install unzip -y && \
         curl -fsSL https://deno.land/x/install/install.sh | sh && \
         cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim && \
         ~/.deno/bin/deno task build:fast
