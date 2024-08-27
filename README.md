@@ -80,7 +80,7 @@ This vim configuration supports the following technologies:
   **snap**, you'll get a _deno v1.27.1_ and the plugin setup will fail.
 
   Therefore, you must install deno from the bash script provided by deno's site
-  which currently installs _deno v1.32.1_, so:
+  which currently installs _[deno v1.32.1](https://github.com/denoland/deno/releases/tag/v1.32.1)_, so:
 
         sudo apt install unzip -y && \
         curl -fsSL https://deno.land/x/install/install.sh | sh && \
