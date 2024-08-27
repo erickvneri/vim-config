@@ -5,6 +5,8 @@ weird to you, but it makes sense to me. However, if you think it can be
 improved _(of course, it can be improved considerably)_ please do not
 hesitate in leaving a message or just fork along.
 
+- Required [Neovim](https://github.com/neovim/neovim/releases/tag/v0.9.2)
+
 ---
 
 This vim configuration supports the following technologies:
