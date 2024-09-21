@@ -55,7 +55,7 @@ local function setup()
 
   --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   lsp.ensure_installed({
-    "tsserver",
+    "ts_ls",
     "eslint",
 
     -- or pylsp, pyre, pyright, ruff_lsp, sourcery
