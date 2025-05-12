@@ -53,28 +53,12 @@ end
 local function setup()
   lsp.preset("recommended")
 
-  --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  lsp.ensure_installed({
-    "ts_ls",
-    "eslint",
-
-    -- or pylsp, pyre, pyright, ruff_lsp, sourcery
-    -- will need "apt install python3.10-venv"
-    "jedi_language_server",
-    "rust_analyzer",
-    "yamlls",
-    "cssls",
-    "html",
-    "marksman",
-    "solang",
-    "jsonls"
-  })
-
   --
   -- No icons please!
   lsp.set_preferences({
     sign_icons = {}
   })
+
 
   --
   -- On-buffer specific bindings
@@ -93,8 +77,9 @@ local function setup()
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opt)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.preferences() end, opt)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opt)
-    --vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
+    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
   end)
+
 
   --
   -- Server specifics
@@ -112,7 +97,7 @@ local function setup()
 
   --
   -- Lua server setup
-  _lua_server_setup()
+  --_lua_server_setup()
 
   --
   -- Error diagnostics

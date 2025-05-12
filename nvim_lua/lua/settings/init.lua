@@ -20,11 +20,35 @@ local setup_lsp = require("settings.setup_lsp")
 local setup_solidity = require("settings.setup_solidity")
 
 local function setup()
-  assert(pcall(setup_buffer_styles), "buffer styles failed")
-  assert(pcall(setup_buffer_language_indentations), "indentation setup failed")
-  assert(pcall(setup_vimfugitive), "vimfugitive setup failed")
-  assert(pcall(setup_lsp), "lsp setup failed")
-  assert(pcall(setup_solidity), "solidity setup failed")
+  local success, err = pcall(setup_buffer_styles)
+  if err then
+    print('failed to initialize buffer styles')
+    print(err)
+  end
+
+  success, err = pcall(setup_buffer_language_indentations)
+  if err then
+    print('failed to initialize language indentation')
+    print(err)
+  end
+
+  success, err = pcall(setup_vimfugitive)
+  if err then
+    print('failed to initialize vimfugitive')
+    print(err)
+  end
+
+  success, err = pcall(setup_lsp)
+  if err then
+    print('failed to initialize lsp config (lsp-zero)')
+    print(err)
+  end
+
+  --success, err = pcall(setup_solidity)
+  --if err then
+    --print('failed to initialize solidity')
+    --print(err)
+  --end
 end
 
 return { setup = setup }
