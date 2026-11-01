@@ -108,7 +108,7 @@ local function setup()
     --
     -- Prettier
     use('neovim/nvim-lspconfig')
-    use('jose-elias-alvarez/null-ls.nvim')
+    use('nvimtools/none-ls.nvim')
     use('MunifTanjim/prettier.nvim')
     --
     -- Rust

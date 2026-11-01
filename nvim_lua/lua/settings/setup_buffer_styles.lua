@@ -58,7 +58,7 @@ local function _setup_catppuccin()
     integrations = {
         cmp = true,
         gitsigns = true,
-        nvimtree = true,
+        neotree = true,
         telescope = true,
         notify = false,
         mini = false,
