@@ -94,12 +94,6 @@ local function setup()
   set("t", "<ESC>", "<C-\\><C-n>")
 
   --
-  -- Markdown preview
-  local mdp = require("peek")
-  set("n", "<leader>mp", mdp.open)
-  set("n", "<leader>mpc", mdp.close)
-
-  --
   -- Emmet config
   cmd [[let g:user_emmet_leader_key = ',']]
   cmd [[let g:user_emmet_mode='i']]

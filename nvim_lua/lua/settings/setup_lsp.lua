@@ -11,35 +11,97 @@
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
-local lsp = require("lsp-zero")
-local lsp_config = require("lspconfig")
+local function setup_completion()
+  local cmp = require("cmp")
 
-
-local function _lua_server_setup()
-  lsp_config.lua_ls.setup({
-    settings = {
-      Lua = {
-        runtime = {
-          version = "Lua 5.3",
-          path = {
-            "?.lua",
-            "?/init.lua",
-            "/usr/local/share/lua/5.3/?.lua/",
-            "/usr/local/share/lua/5.3/?/init.lua",
-            "/usr/local/lib/lua/5.3/?.lua",
-            "/usr/local/lib/lua/5.3/?/init.lua",
-            "/usr/share/lua/5.3/?.lua",
-            "/usr/share/lua/5.3/?/init.lua",
-            "/home/asdeoips/.st_lua_libs/lua_libs-api_v5/?.lua",
-            "/home/asdeoips/.st_lua_libs/lua_libs-api_v5/?/init.lua"
-          }
-        }
-      }
-    }
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end,
+    },
+    mapping = cmp.mapping.preset.insert({
+      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<C-e>"] = cmp.mapping.abort(),
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "path" },
+      { name = "buffer" },
+    }),
   })
 end
 
-local function _error_diagnostics_setup()
+local function setup_keymaps()
+  vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+    callback = function(event)
+      local opts = { buffer = event.buf, remap = false }
+
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+      vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+      vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+      vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+      vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+      vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
+    end,
+  })
+end
+
+local function setup_servers()
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  local servers = {
+    "cssls",
+    "custom_elements_ls",
+    "eslint",
+    "html",
+    "jedi_language_server",
+    "jsonls",
+    "lua_ls",
+    "marksman",
+    "rust_analyzer",
+    "ts_ls",
+    "ts_query_ls",
+    "yamlls",
+  }
+
+  for _, server in ipairs(servers) do
+    vim.lsp.config(server, { capabilities = capabilities })
+  end
+
+  vim.lsp.config("lua_ls", {
+    capabilities = capabilities,
+    settings = {
+      Lua = {
+        runtime = { version = "Lua 5.3" },
+      },
+    },
+  })
+
+  vim.lsp.config("yamlls", {
+    capabilities = capabilities,
+    settings = {
+      yaml = { keyOrdering = false },
+    },
+  })
+
+  require("mason").setup()
+  -- Enable only configured language servers; Solidity remains excluded.
+  vim.lsp.enable(servers)
+end
+
+local function setup()
+  setup_completion()
+  setup_keymaps()
+  setup_servers()
+
   vim.diagnostic.config({
     virtual_text = true,
     signs = true,
@@ -48,60 +110,6 @@ local function _error_diagnostics_setup()
     severity_sort = false,
     float = true,
   })
-end
-
-local function setup()
-  lsp.preset("recommended")
-
-  --
-  -- No icons please!
-  lsp.set_preferences({
-    sign_icons = {}
-  })
-
-
-  --
-  -- On-buffer specific bindings
-  lsp.on_attach(function(client, bufnr)
-    -- Triggered completion, is it necessary?
-    -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    local opts = { buffer = bufnr, remap = false }
-
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opt)
-    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opt)
-    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opt)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opt)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opt)
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opt)
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.preferences() end, opt)
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opt)
-    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opt)
-  end)
-
-
-  --
-  -- Server specifics
-  lsp.configure("yamlls", {
-    settings = {
-      yaml ={
-        keyOrdering = false
-      }
-    }
-  })
-
-  --
-  -- Run setup
-  lsp.setup()
-
-  --
-  -- Lua server setup
-  --_lua_server_setup()
-
-  --
-  -- Error diagnostics
-  _error_diagnostics_setup()
 end
 
 return setup

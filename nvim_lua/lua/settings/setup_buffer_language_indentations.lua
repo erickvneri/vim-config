@@ -25,8 +25,6 @@ local function setup_indentation()
         "*.sh",
         "*.rs",
         "*.sql",
-        "*.plantuml",
-        "*.uml"
       },
       callback = function()
         opt.tabstop = 4
@@ -59,7 +57,6 @@ local function setup_indentation()
       "*.md",
       "*.lua",
       "*.xml",
-      "*.sol",
       "*.json"
     }
   })

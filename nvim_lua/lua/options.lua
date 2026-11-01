@@ -32,7 +32,7 @@ local function setup()
   options.mouse = "a"
   options.list = true
   vim.opt.listchars = { trail = "·", tab = "»·", lead = "·", leadmultispace = "···+" }
-  options.syntax = true
+  options.syntax = "on"
   options.filetype = "off"
 end
 
