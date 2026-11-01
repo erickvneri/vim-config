@@ -57,9 +57,7 @@ This vim configuration supports the following technologies:
            :PackerSync
            :q!
 
-    - Install language servers
-
-          :MasonInstall deno black lua_language_server flake8
+    - Install the language servers you use from `:Mason` (for example, `lua-language-server`, `rust-analyzer`, and `typescript-language-server`). The Neovim configuration enables its supported servers explicitly.
 
 ### Recomendations
 

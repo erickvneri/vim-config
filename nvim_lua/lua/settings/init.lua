@@ -39,7 +39,7 @@ local function setup()
 
   success, err = pcall(setup_lsp)
   if err then
-    print('failed to initialize lsp config (lsp-zero)')
+    print('failed to initialize native LSP config')
     print(err)
   end
 
