@@ -55,7 +55,7 @@ local function setup()
     -- Git diff, fugitive, gitblame
     use "airblade/vim-gitgutter"
     use "tpope/vim-fugitive"
-    use "f-person/git-blame.nvim"
+    use { "f-person/git-blame.nvim", branch = "main" }
     --
     -- Status bar
     use "vim-airline/vim-airline"
@@ -81,7 +81,7 @@ local function setup()
     use('MunifTanjim/prettier.nvim')
     --
     -- Rust
-    use "rust-lang/rust.vim"
+    use { "rust-lang/rust.vim", branch = "main" }
     --
     --
     -- neovim SQL client
