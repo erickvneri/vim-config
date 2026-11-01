@@ -85,26 +85,14 @@ local function setup()
     use "leafgarland/typescript-vim"
     use "maxmellon/vim-jsx-pretty"
     --
-    -- Markdown
-    -- Note: must install deno via :Mason
-    use {
-      "toppair/peek.nvim",
-      run = "deno task --quiet build:fast"
-    }
     --
     -- Prettier
     use('neovim/nvim-lspconfig')
-    use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
     --
     -- Rust
     use "rust-lang/rust.vim"
     --
-    -- PlantUML (only use if necessary)
-    use "aklt/plantuml-syntax"
-    use "tyru/open-browser.vim"
-    use "weirongxu/plantuml-previewer.vim"
-    --use "scrooloose/vim-slumlord"
     --
     -- neovim SQL client
     --use "tpope/vim-dadbod"

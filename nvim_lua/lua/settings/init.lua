@@ -17,7 +17,6 @@ local setup_buffer_styles = require("settings.setup_buffer_styles")
 local setup_buffer_language_indentations = require("settings.setup_buffer_language_indentations")
 local setup_vimfugitive = require("settings.setup_vimfugitive")
 local setup_lsp = require("settings.setup_lsp")
-local setup_solidity = require("settings.setup_solidity")
 
 local function setup()
   local success, err = pcall(setup_buffer_styles)
@@ -44,11 +43,6 @@ local function setup()
     print(err)
   end
 
-  --success, err = pcall(setup_solidity)
-  --if err then
-    --print('failed to initialize solidity')
-    --print(err)
-  --end
 end
 
 return { setup = setup }
