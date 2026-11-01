@@ -24,9 +24,8 @@ vim.g.mapleader = " "
 local function setup()
   -- File Explorer
   --
-  -- NerdTree
-  vim.cmd [[nnoremap <C-B> :NERDTreeToggle<CR>]]
-  vim.cmd [[let g:NERDTreeWinSize=32]]
+  -- Neo-tree
+  set("n", "<C-B>", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" })
   -- Telescope
   local ts = require("telescope.builtin")
   set("n", "<leader>pf", ts.find_files, {})

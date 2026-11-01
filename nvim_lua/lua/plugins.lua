@@ -44,7 +44,23 @@ local function setup()
     }
     --
     -- File Explorer
-    use "preservim/nerdtree"
+    use {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+        require("neo-tree").setup({
+          window = {
+            position = "left",
+            width = 32,
+          },
+        })
+      end,
+    }
     use {
       "nvim-telescope/telescope.nvim",
       tag = "0.1.1",
@@ -61,9 +77,7 @@ local function setup()
     --use "dracula/vim"
     use { "catppuccin/nvim", as = "catppuccin" }
     --
-    -- Git diff, fugitive, gitblame
-    use "airblade/vim-gitgutter"
-    use "tpope/vim-fugitive"
+    -- Git blame
     use "f-person/git-blame.nvim"
     --
     -- Status bar
