@@ -99,6 +99,12 @@ local function setup()
   cmd [[let g:user_emmet_mode='i']]
   cmd [[let g:user_emmet_install_global = 1]]
   cmd [[autocmd FileType html,css,js EmmetInstall]]
+
+  --
+  -- Diffview controls
+  set("n", "<leader>dff", ":DiffviewOpen<CR>")
+  set("n", "<leader>dfx", ":DiffviewClose<CR>")
+  set("n", "<leader>dfh", ":DiffviewFileHistory<CR>")
 end
 
 return { setup = setup }

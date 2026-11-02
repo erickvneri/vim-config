@@ -52,10 +52,11 @@ local function setup()
     --use "dracula/vim"
     use { "catppuccin/nvim", as = "catppuccin" }
     --
-    -- Git diff, fugitive, gitblame
+    -- Git diff, fugitive, gitblame, diff
     use "airblade/vim-gitgutter"
     use "tpope/vim-fugitive"
     use { "f-person/git-blame.nvim", branch = "main" }
+    use "sindrets/diffview.nvim"
     --
     -- Status bar
     use {
@@ -73,6 +74,7 @@ local function setup()
     --
     -- Emmet engine
     use "mattn/emmet-vim"
+    --
     -- Python Black formatter
     use "psf/black"
     --
@@ -81,13 +83,11 @@ local function setup()
     use "leafgarland/typescript-vim"
     use "maxmellon/vim-jsx-pretty"
     --
-    --
     -- Prettier
     use('MunifTanjim/prettier.nvim')
     --
     -- Rust
     use { "rust-lang/rust.vim", branch = "main" }
-    --
     --
     -- neovim SQL client
     --use "tpope/vim-dadbod"
