@@ -58,7 +58,12 @@ local function setup()
     use { "f-person/git-blame.nvim", branch = "main" }
     --
     -- Status bar
-    use "vim-airline/vim-airline"
+    use {
+      "ojroques/nvim-hardline",
+      config = function()
+        require("hardline").setup({})
+      end,
+    }
     --
     -- Line commenter
     use "scrooloose/nerdcommenter"
